@@ -72,12 +72,12 @@ func intersect(_ a : Node<Int>?, _ b : Node<Int>?) -> Node<Int>? {
 func printLinkedList(_ root : Node<Int>?) {
     
     var temp = root
-    for i in 1...10 {
+    while (temp != nil) {
         print(temp?.value)
         temp = temp?.next
     }
 }
 
 printLinkedList(merge(createLinkedList1(), createLinkedList2()))
-
+print("-----")
 printLinkedList(intersect(createLinkedList1(), createLinkedList2()))
