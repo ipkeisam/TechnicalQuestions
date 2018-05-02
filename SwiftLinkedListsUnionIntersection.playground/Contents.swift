@@ -46,7 +46,12 @@ func merge(_ a : Node<Int>?, _ b : Node<Int>?) -> Node<Int>? {
     }
     else {
         result = b
-        result?.next = merge(a, b?.next)
+        if ((a?.value)! == (b?.value)!) {
+            result?.next = merge(a?.next, b?.next)
+        }
+        else {
+            result?.next = merge(a, b?.next)
+        }
     }
     return result
 }
